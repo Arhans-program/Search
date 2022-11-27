@@ -1,0 +1,29 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href='/static/style.css' />
+        <title>@ Arhank</title>
+    </head>
+    <body class="results-page">
+        <div class="top-bar">
+            <form action="/searching" method="post">
+                <label for="bar" style="color: white; font-size: 25px;">Arhank</label>
+                <section class="search-bar">
+                    <input type="text" class="bar" id="bar-2" name="bar" placeholder="Search">
+                    <button type="submit" value="Submit">🔍</button>
+                </section>
+            </form>
+            <br>
+            <pre class="section">🔍 All   📷 Images   📰 News   📖 Books   ▶️ Videos   :More</pre>
+        </div>
+        <hr>
+        <div class="res">
+            {% for message in messages %}
+                <li style="display:block;"><a class="results" href={{message[1]}}>{{message[0]}}</a></li><br>
+            {% endfor %}
+        </div>
+    </body>
+    </html>
